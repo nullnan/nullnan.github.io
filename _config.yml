@@ -3,17 +3,19 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-keywords:
-author: John Doe
-language:
-timezone:
-
+title: Return void
+subtitle: Null NaN's Blog
+description: Code is Life!Code is Magic!
+keywords: 
+author: Null NaN
+language: 
+  - zh-CN
+  - en
+timezone: Asia/Shanghai
+avatar: https://img.vim-cn.com/69/e2cef1e0cddc1cdcc4f5628f4ebdf66b2e9f52.jpg
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://nullnan.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -73,9 +75,13 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: material-x
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type:
+
+leancloud:
+  app_id: zChnNitikOeWM1Ylb8vraNPE-gzGzoHsz
+  app_key: HKVOo5pHPX0b6cXBGSMBB824
