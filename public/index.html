@@ -43,6 +43,10 @@
 </head>
 
 <body>
+<!--动态线条背景-->
+<script type="text/javascript"
+color="251,167,200" opacity='0.9' zIndex="-2" count="250" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
   
   
   <div class="cover-wrapper">
@@ -70,12 +74,6 @@
         </li>
       
         <li>
-          <a class="nav home" href="/projects/" id="projects">
-            <i class="fas fa-code-branch fa-fw"></i>&nbsp;项目
-          </a>
-        </li>
-      
-        <li>
           <a class="nav home" href="/friends/" rel="nofollow" id="friends">
             <i class="fas fa-link fa-fw"></i>&nbsp;友链
           </a>
@@ -87,15 +85,21 @@
           </a>
         </li>
       
+        <li>
+          <a class="nav home" href="https://www.tripleember.tk" rel="nofollow" id="https:www.tripleember.tk">
+            <i class=" fa-fw"></i>&nbsp;屑社
+          </a>
+        </li>
+      
     
   </ul>
 </div>
 
       
     </cover>
-    <header class="l_header pure">
+    <header class="l_header material">
   <div id="loading-bar-wrapper">
-    <div id="loading-bar" class="pure"></div>
+    <div id="loading-bar" class="material"></div>
   </div>
 
 	<div class="wrapper">
@@ -110,25 +114,25 @@
           
   					
   						<li>
-								<a class="nav flat-box" href="/" id="home">
-									<i class="fas fa-grin fa-fw"></i>&nbsp;示例
+								<a class="nav flat-box" href="/notes/" id="notes">
+									<i class="fas fa-archive fa-fw"></i>&nbsp;Note
 								</a>
 							</li>
       			
   						<li>
-								<a class="nav flat-box" href="/blog/categories/" rel="nofollow" id="blogcategories">
-									<i class="fas fa-folder-open fa-fw"></i>&nbsp;分类
+								<a class="nav flat-box" href="/think" id="think">
+									<i class="fas fa-coffee fa-fw"></i>&nbsp;Think &amp; Idea
 								</a>
 							</li>
       			
   						<li>
-								<a class="nav flat-box" href="/blog/tags/" rel="nofollow" id="blogtags">
+								<a class="nav flat-box" href="/tags/" rel="nofollow" id="tags">
 									<i class="fas fa-hashtag fa-fw"></i>&nbsp;标签
 								</a>
 							</li>
       			
   						<li>
-								<a class="nav flat-box" href="/blog/archives/" rel="nofollow" id="blogarchives">
+								<a class="nav flat-box" href="/categories/" rel="nofollow" id="categories">
 									<i class="fas fa-archive fa-fw"></i>&nbsp;归档
 								</a>
 							</li>
@@ -177,26 +181,20 @@
             </li>
           
             <li>
-							<a class="nav flat-box" href="/blog/archives/" rel="nofollow" id="blogarchives">
-								<i class="fas fa-archive fa-fw"></i>&nbsp;文章归档
+							<a class="nav flat-box" href="/note/" rel="nofollow" id="note">
+								<i class="fas fa-archive fa-fw"></i>&nbsp;Notes
 							</a>
             </li>
           
             <li>
-							<a class="nav flat-box" href="/projects/" id="projects">
-								<i class="fas fa-code-branch fa-fw"></i>&nbsp;开源项目
+							<a class="nav flat-box" href="/think/" id="think">
+								<i class="fas fa-coffee fa-fw"></i>&nbsp;Think &amp; Idea
 							</a>
             </li>
           
             <li>
 							<a class="nav flat-box" href="/friends/" rel="nofollow" id="friends">
 								<i class="fas fa-link fa-fw"></i>&nbsp;我的友链
-							</a>
-            </li>
-          
-            <li>
-							<a class="nav flat-box" href="https://xaoxuu.com/wiki/material-x/" rel="nofollow" id="https:xaoxuu.comwikimaterial-x">
-								<i class="fas fa-book fa-fw"></i>&nbsp;主题文档
 							</a>
             </li>
           
@@ -243,8 +241,8 @@
       
         
   <h2 class="title">
-    <a href="/2019/06/06/hello-world/">
-      Hello World
+    <a href="/2017/07/08/build-blog/">
+      我的Hexo博客搭建
     </a>
   </h2>
 
@@ -272,7 +270,7 @@
             <div class="new-meta-item date">
   <a class="notlink">
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-06-06</p>
+    <p>2017-07-08</p>
   </a>
 </div>
 
@@ -303,22 +301,62 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+      <h1 id="我的Hexo博客搭建"><a href="#我的Hexo博客搭建" class="headerlink" title="我的Hexo博客搭建"></a>我的Hexo博客搭建</h1><h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><ol>
+<li>硬件：Raspberry Pi2 B</li>
+<li>OS：Raspbian</li>
+<li>Web：coding pages</li>
+</ol>
+<h2 id="安装node-js和git"><a href="#安装node-js和git" class="headerlink" title="安装node.js和git"></a>安装node.js和git</h2><p>这步很简单，就不说了。hexo的网站上也有<a href="https://hexo.io/docs/" target="_blank" rel="noopener">写明</a>。<del>其实是怕麻烦才不写的</del></p>
+<h2 id="安装hexo-cli"><a href="#安装hexo-cli" class="headerlink" title="安装hexo-cli"></a>安装hexo-cli</h2><p>执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$npm</span> install hexo-cli</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p> 就完成了hexo的安装，简单吧。</p>
+<h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><p>创建一个空文件夹并进入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$mkdir</span> YourBlogDir &amp;&amp; <span class="built_in">cd</span> YourBlogDir</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>执行安装命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$hexo</span> init</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>此时hexo会从github上下载文件到当前目录<del>（这便捷的安装真是比WordPress高到不知道哪里去了，蛤蛤）</del><br><em>新版hexo会自动执行npm install所以就不用执行了</em><br>现在，你可以用hexo g &amp;&amp; hexo s然后访问<a href="127.0.0.1:4000" target="_blank" rel="noopener">localhost:4000</a>来查看预览了<br>Tips:<em>如果你发现报错，可以查看<a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">这个</a>来解决</em></p>
+<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><p>默认的landscape主题很好看，但我就是要换，蛤蛤。hexo当然支持主题啦，你可以在<a href="https://hexo.io/themes/" target="_blank" rel="noopener">这里</a>找到更多。我选择的是<a href="https://material.viosey.com/" target="_blank" rel="noopener">Material</a>一款扁平化的主题。当然你有能力可以自己开发。<br> 依照说明，在博客目录下执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$hexo</span> install hexo-material</span><br><span class="line"><span class="variable">$cp</span> /node-modules/hexo-material /theme/material</span><br><span class="line"><span class="variable">$cp</span> /theme/material/_config.template.yml  /theme/material/_config.yml</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<p>完成主题的安装，之后在<code>_config.yml</code>文件中启用修改<code>theme: 
+landscape</code>为<code>theme: material</code>即可<br>Tips:<em>一定要在<code>theme:</code>的冒号后加一个空格，不然会报错，其他yml配置亦是如此</em><br>现在，你可以用<code>hexo s</code>来查看效果了。Like this:<br><img src="/img/blog/hexo-with-material-theme.png" alt="hexo-with-material-theme"><br>这时你一定流下了激动的泪水,right?</p>
+<h2 id="部署到coding-pages"><a href="#部署到coding-pages" class="headerlink" title="部署到coding pages"></a>部署到coding pages</h2><ol>
+<li>修改_config.yml<br>使用你喜欢的编辑器打开_config.yml将其中的<br>将<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url:</span> </span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p>改为</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">你的pages地址</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">你的博客目录(如果使用项目pages的话,使用用户pages可以不用修改)</span></span><br></pre></td></tr></table></figure>
+
+<p><em>我建议你使用用户pages，即将你的博客仓库名设置为{your_name}.coding.me，{user_name} 指代你的coding个性后缀这样不仅可以用{your_name}.coding.me进行访问，简化了URL，而且不会出现诸如css,图片无法加载的错误。关于这两种pages的区别，可以在<a href="https://coding.net/help/doc/pages/index.html" target="_blank" rel="noopener">这里</a>看到</em></p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">	<span class="attr">type:</span></span><br></pre></td></tr></table></figure>
+
+<p>改为</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"> 		<span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"> 		<span class="attr">repository:</span> <span class="string">你的项目git仓库地址</span> </span><br><span class="line"> 	<span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p><em>推荐使用ssh方式，当然https也可以</em><br>对了别忘了执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$npm</span> install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>否则会报错</p>
+<h2 id="部署到coding"><a href="#部署到coding" class="headerlink" title="部署到coding"></a>部署到coding</h2><p>最赛艇的一步来啦！<br>hexo的部署非常简单就一条命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$hexo</span> d -g <span class="comment">#必须在博客目录执行不然会报错</span></span><br></pre></td></tr></table></figure>
+
+<p><em>用https会让你输入用户名和密码</em></p>
+<h2 id="部署coding-pages"><a href="#部署coding-pages" class="headerlink" title="部署coding pages"></a>部署coding pages</h2><p>在项目中找到代码-&gt;Pages 服务，部署来源选择master分支即可。<br><strong>Yah！恭喜你的博客已经上线了</strong><br>访问{your_name}.coding.me即可看到，现在开始写吧。<br>最后祝您身体健康，再见！(手动滑稽)</p>
 
       
     </div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/Hexo/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Hexo</a>
+        
+          <a href="/tags/Blog/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Blog</a>
+        
+      </div>
     
   </section>
 </article>
@@ -363,7 +401,7 @@
           
           
             <section class="widget author">
-  <div class="content pure">
+  <div class="content material">
     
       <div class="avatar">
         <img class="avatar" src="https://img.vim-cn.com/69/e2cef1e0cddc1cdcc4f5628f4ebdf66b2e9f52.jpg">
@@ -407,12 +445,12 @@
           
             <section class="widget grid">
   
-<header class="pure">
+<header class="material">
   <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
   
 </header>
 
-  <div class="content pure">
+  <div class="content material">
     <ul class="grid navgation">
       
         <li><a class="flat-box" title="/" href="/" id="home">
@@ -422,7 +460,7 @@
           近期文章
         </a></li>
       
-        <li><a class="flat-box" title="/blog/archives/" href="/blog/archives/" rel="nofollow" id="blogarchives">
+        <li><a class="flat-box" title="/categories/" href="/categories/" rel="nofollow" id="categories">
           
             <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
           
@@ -462,6 +500,21 @@
           
           
             
+  <section class="widget tagcloud">
+    
+<header class="material">
+  <div><i class="fas fa-fire fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
+  
+    <a class="rightBtn" rel="nofollow" href="/blog/tags/" title="blog/tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class="content material">
+      <a href="/tags/Blog/" style="font-size: 14px; color: #999">Blog</a> <a href="/tags/Hexo/" style="font-size: 14px; color: #999">Hexo</a>
+    </div>
+  </section>
+
 
           
         
@@ -470,6 +523,24 @@
           
           
             
+
+          
+        
+      
+        
+          
+          
+            <section class="widget plain">
+  
+<header class="material">
+  <div><i class="fas fa-map-marker fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;访客记录</div>
+  
+</header>
+
+  <div class="content material">
+    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=53ppquqap01&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=49" async="async"></script>
+  </div>
+</section>
 
           
         
@@ -482,7 +553,7 @@
 
   <section class="widget music">
     
-<header class="pure">
+<header class="material">
   <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
   
     <a class="rightBtn" rel="external nofollow noopener noreferrer" target="_blank" href="https://music.163.com/#/my/m/music/playlist?id=2831456302" title="https://music.163.com/#/my/m/music/playlist?id=2831456302">
@@ -490,7 +561,7 @@
   
 </header>
 
-    <div class="content pure">
+    <div class="content material">
       
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
   <div class="aplayer" data-theme="#1BCDFC" data-mode="circulation" data-server="netease" data-type="playlist" data-id="2831456302" data-volume="0.4">
@@ -535,11 +606,6 @@
     本站使用
     <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
     作为主题
-    
-      ，
-      总访问量为
-      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
-      次
     
     。
   </div>
@@ -596,8 +662,6 @@
   </script>
 
 
-  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
-
 
 
 
@@ -609,14 +673,14 @@
       $(function(){
         if ('.cover') {
           $('.cover').backstretch(
-          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
+          ["https://api.neweb.top/bing.php?type=rand", "https://api.neweb.top/bing.php?type=rand"],
           {
             duration: "6000",
             fade: "2500"
           });
         } else {
           $.backstretch(
-          ["https://img.vim-cn.com/6d/a0c9e6f9efad8b731cb7376504bd10d79d2053.jpg"],
+          ["https://api.neweb.top/bing.php?type=rand", "https://api.neweb.top/bing.php?type=rand"],
           {
             duration: "6000",
             fade: "2500"
@@ -754,5 +818,5 @@
 
 
   <script>setLoadingBarProgress(100);</script>
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":300,"height":600},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
