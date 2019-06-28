@@ -4,30 +4,65 @@
   
     
     <entry>
-      <title>new article</title>
-      <link href="/2019/06/12/new%20article/"/>
-      <url>/2019/06/12/new%20article/</url>
+      <title>Vue.js开发环境搭建</title>
+      <link href="/2019/06/28/build-vue-develop-env/"/>
+      <url>/2019/06/28/build-vue-develop-env/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="Vue-js开发环境搭建"><a href="#Vue-js开发环境搭建" class="headerlink" title="Vue.js开发环境搭建"></a><code>Vue.js</code>开发环境搭建</h1><p>为了写恰饭项目(?)，所以开始学<code>Vue.js</code> ，在这里记录一下搭建开发环境的过程</p><h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装<code>Node.js</code></h2><p>首先安装一个<code>node.js</code>环境，因为在<a href="/2017/07/08/build-blog/">安装博客</a>的时候就已经装好了，所以就不写了，或者使用<code>nvm</code>工具安装</p><h2 id="安装vue-cli工具"><a href="#安装vue-cli工具" class="headerlink" title="安装vue-cli工具"></a>安装<code>vue-cli</code>工具</h2><p>森破</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm i -g vue-cli</span><br></pre></td></tr></table></figure><blockquote><p>建议使用淘宝<code>npm</code>镜像，因为我已经配置好了，就不写了，随便Google一下就行</p></blockquote><p>用<code>vue  --version</code> 命令看看是否已经安装成功</p><p>然后就完事了，关于创建项目什么的交给<code>WebStrom</code> 之类的<code>IDE</code>去做就好了，以后再写写吧</p><p> <del>(又水一篇博客)</del></p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> 前端开发 </tag>
+            
+            <tag> Vue </tag>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
       
     </entry>
     
     
     
     <entry>
-      <title>test</title>
-      <link href="/2019/06/08/pic%20test/"/>
-      <url>/2019/06/08/pic%20test/</url>
+      <title>install-flutter-sdk</title>
+      <link href="/2019/06/19/install-flutter-sdk/"/>
+      <url>/2019/06/19/install-flutter-sdk/</url>
       
-        <content type="html"><![CDATA[<h1 id="图片测试"><a href="#图片测试" class="headerlink" title="图片测试"></a>图片测试</h1><p><img src="https://img.vim-cn.com/05/c9f9b0605d8d1133a438e9704e1e3ac70b86ab.jpg" alt="a pic"></p>]]></content>
+        <content type="html"><![CDATA[<p># </p>]]></content>
       
       
       
         <tags>
             
-            <tag> test </tag>
+            <tag> Flutter </tag>
+            
+            <tag> Web </tag>
+            
+            <tag> Mobile </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>trie-tree-code</title>
+      <link href="/2019/06/13/trie-tree-code/"/>
+      <url>/2019/06/13/trie-tree-code/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> oi </tag>
+            
+            <tag> 数据结构qs1i37 </tag>
             
         </tags>
       
