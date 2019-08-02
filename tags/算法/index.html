@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Archives: 2017/7 | Return void</title>
+  <title>Tag: 算法 | Return void</title>
   
   
   <meta name="description" content="Code is Life!Code is Magic!">
@@ -216,9 +216,11 @@ color="251,167,200" opacity='0.9' zIndex="-2" count="250" src="//cdn.bootcss.com
 
   <div class="l_body">
     <div class='body-wrapper'>
-      <div class="l_main">
-	
-		
+      
+<div class="l_main">
+  
+    
+      
   <section class="post-list">
     
       
@@ -242,8 +244,8 @@ color="251,167,200" opacity='0.9' zIndex="-2" count="250" src="//cdn.bootcss.com
       
         
   <h2 class="title">
-    <a href="/2017/07/08/build-blog/">
-      我的Hexo博客搭建
+    <a href="/2019/08/02/string-hash/">
+      字符串 hash算法
     </a>
   </h2>
 
@@ -271,7 +273,7 @@ color="251,167,200" opacity='0.9' zIndex="-2" count="250" src="//cdn.bootcss.com
             <div class="new-meta-item date">
   <a class="notlink">
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2017-07-08</p>
+    <p>2019-08-02</p>
   </a>
 </div>
 
@@ -302,60 +304,52 @@ color="251,167,200" opacity='0.9' zIndex="-2" count="250" src="//cdn.bootcss.com
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <h1 id="我的Hexo博客搭建"><a href="#我的Hexo博客搭建" class="headerlink" title="我的Hexo博客搭建"></a>我的Hexo博客搭建</h1><h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><ol>
-<li>硬件：Raspberry Pi2 B</li>
-<li>OS：Raspbian</li>
-<li>Web：coding pages</li>
-</ol>
-<h2 id="安装node-js和git"><a href="#安装node-js和git" class="headerlink" title="安装node.js和git"></a>安装node.js和git</h2><p>这步很简单，就不说了。hexo的网站上也有<a href="https://hexo.io/docs/" target="_blank" rel="noopener">写明</a>。<del>其实是怕麻烦才不写的</del></p>
-<h2 id="安装hexo-cli"><a href="#安装hexo-cli" class="headerlink" title="安装hexo-cli"></a>安装hexo-cli</h2><p>执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$npm</span> install hexo-cli</span><br></pre></td></tr></table></figure>
+      <h1 id="字符串的hash"><a href="#字符串的hash" class="headerlink" title="字符串的hash"></a>字符串的hash</h1><p>题目   <a href="https://www.luogu.org/problem/P3370" target="_blank" rel="noopener">字符串的hash</a></p>
+<p>就是给你很多字符串，让你统计不同的个数</p>
+<h2 id="lt-set-gt-做法"><a href="#lt-set-gt-做法" class="headerlink" title="&lt;set&gt;做法"></a><code>&lt;set&gt;</code>做法</h2><p>首先呢，其实不用hash也可以，<code>C++ STL</code>里面的<code>&lt;set&gt;</code>就可以解决</p>
+<p>AC Code</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cin</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cout</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">string</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">set</span>;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">IO</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">std</span>::ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="built_in">string</span> in;</span><br><span class="line"><span class="built_in">set</span>&lt;<span class="built_in">string</span>&gt; a;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	IO();</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">while</span>(n--) &#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; in;</span><br><span class="line">		a.insert(in);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; a.size() &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p> 就完成了hexo的安装，简单吧。</p>
-<h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><p>创建一个空文件夹并进入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$mkdir</span> YourBlogDir &amp;&amp; <span class="built_in">cd</span> YourBlogDir</span><br></pre></td></tr></table></figure>
+<p>然后你就会发现神奇的AC了，毕竟<code>&lt;set&gt;</code>就是维护了一个不重复的集合吗</p>
+<p>不过它使用红黑树实现 单次插入复杂度O(logn), 那么总的复杂度就是O(nlogn),</p>
+<p>而本题的数据范围是n &lt;= 10000,所以自然就能过。</p>
+<p>所以本篇文章就水完了，谢谢大家。</p>
+<h2 id="HASH"><a href="#HASH" class="headerlink" title="HASH"></a>HASH</h2><p>但等等，我们不是要学习HASH吗？</p>
+<p>而且……</p>
+<p><img src="https://img.vim-cn.com/70/b7853e4497742850a41b7422fab4abc83ff133.png" alt></p>
+<p>还是得好好学</p>
+<p>那么<code>hash</code>到底是什么呢，其实<code>hash</code>很常见，平常校验文件、镜像时使用的<code>sha256</code> 、<code>md5</code>等算法都是<code>hash</code>算法，他们都是将不同的数据唯一映射到一个长度固定的空间内。</p>
+<p>那么具体是怎么实现的呢?</p>
+<p>方法有很多，OI中常用的是进制hash</p>
+<p>就是把字符串看做一个base进制的数，每次将hash乘以base然后加上下一个字母ascii值然后对一个数取模,对于模数的选取要尽量大而且尽量是素数，不然就会增加<code>hash</code>对撞的风险（生日悖论），这里一般采用“自然溢出法”，利用<code>unsigned long long</code>的最大值2e64-1是个素数的原理</p>
+<p>AC code</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cin</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">cout</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">string</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">vector</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> hash;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">10000</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> hash base = <span class="number">19260817</span>; <span class="comment">// wsl</span></span><br><span class="line"><span class="keyword">const</span> hash mod = <span class="number">19260817</span>; <span class="comment">// died twice</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">IO</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">std</span>::ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="built_in">string</span> in;</span><br><span class="line"><span class="built_in">vector</span>&lt;hash&gt; hasht;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> hash <span class="title">strhash</span><span class="params">(<span class="built_in">string</span> tmp)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> len = (<span class="keyword">int</span>)tmp.size();</span><br><span class="line">	hash ret = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; len;++i) &#123;</span><br><span class="line">		ret = (ret * base + tmp[i]); <span class="comment">//% mod;</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	IO();</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">	<span class="keyword">while</span>(n--) &#123;</span><br><span class="line">		<span class="built_in">cin</span> &gt;&gt; in;</span><br><span class="line">		hasht.push_back(strhash(in));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">std</span>::sort(hasht.begin(),hasht.end());</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; (<span class="built_in">std</span>::unique(hasht.begin(),hasht.end()) - hasht.begin()) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>执行安装命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$hexo</span> init</span><br></pre></td></tr></table></figure>
+<p>然而这是单<code>hash</code> 在很多情况下会被出题人卡掉QAQ</p>
+<p>所以可以用双/多<code>hash</code>来防止单个<code>hash</code>的对撞风险。</p>
+<p>Code </p>
+<p>emmm不放了，就是不同的mod base <code>hash</code>两遍然后比较，如果其中的任意一个不重复就是一个不同的串</p>
+<p>可以先<code>sort</code>一遍，然后</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; (<span class="keyword">int</span>)a.size();++i) &#123;</span><br><span class="line">				<span class="keyword">if</span>(a[i].hash1 != a[i+<span class="number">1</span>].hash1 || a[i].hash2 != a[i+<span class="number">1</span>].hash2) ++ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>此时hexo会从github上下载文件到当前目录<del>（这便捷的安装真是比WordPress高到不知道哪里去了，蛤蛤）</del><br><em>新版hexo会自动执行npm install所以就不用执行了</em><br>现在，你可以用hexo g &amp;&amp; hexo s然后访问<a href="127.0.0.1:4000" target="_blank" rel="noopener">localhost:4000</a>来查看预览了<br>Tips:<em>如果你发现报错，可以查看<a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">这个</a>来解决</em></p>
-<h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><p>默认的landscape主题很好看，但我就是要换，蛤蛤。hexo当然支持主题啦，你可以在<a href="https://hexo.io/themes/" target="_blank" rel="noopener">这里</a>找到更多。我选择的是<a href="https://material.viosey.com/" target="_blank" rel="noopener">Material</a>一款扁平化的主题。当然你有能力可以自己开发。<br> 依照说明，在博客目录下执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$hexo</span> install hexo-material</span><br><span class="line"><span class="variable">$cp</span> /node-modules/hexo-material /theme/material</span><br><span class="line"><span class="variable">$cp</span> /theme/material/_config.template.yml  /theme/material/_config.yml</span><br></pre></td></tr></table></figure>
-
-<p>完成主题的安装，之后在<code>_config.yml</code>文件中启用修改<code>theme: 
-landscape</code>为<code>theme: material</code>即可<br>Tips:<em>一定要在<code>theme:</code>的冒号后加一个空格，不然会报错，其他yml配置亦是如此</em><br>现在，你可以用<code>hexo s</code>来查看效果了。Like this:<br><img src="/img/blog/hexo-with-material-theme.png" alt="hexo-with-material-theme"><br>这时你一定流下了激动的泪水,right?</p>
-<h2 id="部署到coding-pages"><a href="#部署到coding-pages" class="headerlink" title="部署到coding pages"></a>部署到coding pages</h2><ol>
-<li>修改_config.yml<br>使用你喜欢的编辑器打开_config.yml将其中的<br>将<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url:</span> </span><br><span class="line"><span class="attr">root:</span> <span class="string">/</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<p>改为</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">你的pages地址</span></span><br><span class="line"><span class="attr">root:</span> <span class="string">你的博客目录(如果使用项目pages的话,使用用户pages可以不用修改)</span></span><br></pre></td></tr></table></figure>
-
-<p><em>我建议你使用用户pages，即将你的博客仓库名设置为{your_name}.coding.me，{user_name} 指代你的coding个性后缀这样不仅可以用{your_name}.coding.me进行访问，简化了URL，而且不会出现诸如css,图片无法加载的错误。关于这两种pages的区别，可以在<a href="https://coding.net/help/doc/pages/index.html" target="_blank" rel="noopener">这里</a>看到</em></p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">	<span class="attr">type:</span></span><br></pre></td></tr></table></figure>
-
-<p>改为</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"> 		<span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"> 		<span class="attr">repository:</span> <span class="string">你的项目git仓库地址</span> </span><br><span class="line"> 	<span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-
-<p><em>推荐使用ssh方式，当然https也可以</em><br>对了别忘了执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$npm</span> install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p>否则会报错</p>
-<h2 id="部署到coding"><a href="#部署到coding" class="headerlink" title="部署到coding"></a>部署到coding</h2><p>最赛艇的一步来啦！<br>hexo的部署非常简单就一条命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$hexo</span> d -g <span class="comment">#必须在博客目录执行不然会报错</span></span><br></pre></td></tr></table></figure>
-
-<p><em>用https会让你输入用户名和密码</em></p>
-<h2 id="部署coding-pages"><a href="#部署coding-pages" class="headerlink" title="部署coding pages"></a>部署coding pages</h2><p>在项目中找到代码-&gt;Pages 服务，部署来源选择master分支即可。<br><strong>Yah！恭喜你的博客已经上线了</strong><br>访问{your_name}.coding.me即可看到，现在开始写吧。<br>最后祝您身体健康，再见！(手动滑稽)</p>
+<p>就统计出了答案。</p>
+<h2 id="番外"><a href="#番外" class="headerlink" title="番外"></a>番外</h2><p><code>C++ STL</code>里面的<code>&lt;set&gt;</code>不行，那就用<code>C++ 11</code>提供的<code>&lt;unordered_set&gt;</code> 因为这个的内部实现就是使用<code>hash</code>来实现，所以其复杂度就是O(n) <del>应该吧，不过记得<code>--std=c++11</code>不然CE</del></p>
+<p>名 正 言 顺</p>
+<p>代码就不用了，把前面用到set的地方改成unordered_set就行了。</p>
+<p><code>EOF</code></p>
 
       
     </div>
     
       <div class="full-width auto-padding tags">
         
-          <a href="/tags/Hexo/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Hexo</a>
+          <a href="/tags/OI/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>OI</a>
         
-          <a href="/tags/Blog/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Blog</a>
+          <a href="/tags/hash/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>hash</a>
+        
+          <a href="/tags/字符串/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>字符串</a>
+        
+          <a href="/tags/算法/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>算法</a>
         
       </div>
     
@@ -376,7 +370,8 @@ landscape</code>为<code>theme: material</code>即可<br>Tips:<em>一定要在<c
   
 
 
-	
+    
+  
 </div>
 <aside class="l_side">
   
@@ -613,14 +608,6 @@ landscape</code>为<code>theme: material</code>即可<br>Tips:<em>一定要在<c
   </div>
 </footer>
 <script>setLoadingBarProgress(80);</script>
-
-
-
-
-	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-	
-
-	
 
 
       <script>setLoadingBarProgress(60);</script>
