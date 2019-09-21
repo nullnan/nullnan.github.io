@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>oi-template</title>
+      <link href="/2019/09/21/oi-template/"/>
+      <url>/2019/09/21/oi-template/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>树链剖分(模板)</title>
       <link href="/2019/08/03/tree-chain-partitioning/"/>
       <url>/2019/08/03/tree-chain-partitioning/</url>
@@ -16,9 +29,9 @@
             
             <tag> OI </tag>
             
-            <tag> 算法 </tag>
-            
             <tag> 数据结构 </tag>
+            
+            <tag> 算法 </tag>
             
             <tag> 树链剖分 </tag>
             
@@ -41,11 +54,11 @@
             
             <tag> OI </tag>
             
+            <tag> 算法 </tag>
+            
             <tag> hash </tag>
             
             <tag> 字符串 </tag>
-            
-            <tag> 算法 </tag>
             
         </tags>
       

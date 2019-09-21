@@ -23,13 +23,13 @@
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
   
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.6.3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
   
 
   
 
   
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9.9/css/style.css">
   
 
   <script>
@@ -43,10 +43,6 @@
 </head>
 
 <body>
-<!--动态线条背景-->
-<script type="text/javascript"
-color="251,167,200" opacity='0.9' zIndex="-2" count="250" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
-</script>
   
   
   <div class="cover-wrapper">
@@ -256,12 +252,14 @@ color="251,167,200" opacity='0.9' zIndex="-2" count="250" src="//cdn.bootcss.com
           
             
   <div class="new-meta-item author">
-    <a href="https://nullnan.github.io" rel="nofollow">
-      
-        <img src="https://img.vim-cn.com/69/e2cef1e0cddc1cdcc4f5628f4ebdf66b2e9f52.jpg">
-      
-      <p>Null NaN</p>
-    </a>
+    
+      <a href="https://nullnan.github.io" rel="nofollow">
+        
+          <img src="https://img.vim-cn.com/69/e2cef1e0cddc1cdcc4f5628f4ebdf66b2e9f52.jpg">
+        
+        <p>Null NaN</p>
+      </a>
+    
   </div>
 
 
@@ -302,80 +300,22 @@ color="251,167,200" opacity='0.9' zIndex="-2" count="250" src="//cdn.bootcss.com
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p>update: 2019.8.7</p>
-<h1 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h1><p>Web：<del>coding pages</del>（coding已经被腾讯收购了，github也被微软收购了）鉴于github的服务器更加自♂由，所以我们选择github pages <em>如果有能力也可以搭建在自己的服务器上，使用git hook和静态服务器也行</em></p>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><h2 id="安装Node-js-和-npm"><a href="#安装Node-js-和-npm" class="headerlink" title="安装Node.js 和 npm"></a>安装Node.js 和 npm</h2><p>这步很简单，就不说了。hexo的网站上也有 <del>其实是怕麻烦才不写的</del>   </p>
-<blockquote>
-<p><a href="https://hexo.io/zh-cn/docs/index.html#%E5%AE%89%E8%A3%85-Node-js" target="_blank" rel="noopener">传送门</a></p>
-</blockquote>
-<h2 id="安装hexo-cli"><a href="#安装hexo-cli" class="headerlink" title="安装hexo-cli"></a>安装hexo-cli</h2><h2 id="使用淘宝镜像"><a href="#使用淘宝镜像" class="headerlink" title="使用淘宝镜像"></a>使用淘宝镜像</h2><p>如果您在中国大陆，请使用淘宝提供的<code>npm</code>镜像，使用如下命令安装</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-
-<p><strong>特别说明，本文所有给出的命令是假定在<code>zsh/bash</code>环境下执行，比如<code>Mac OS</code>、<code>GNU/Linux</code>或者<code>Windows</code>下的<code>Linux</code>终端仿真器，所以所有命令前的<code>$</code>本身并不是命令的一部分，它仅代表在非特权用户下执行，如果在诸如特权用户下执行，会使用<code>#</code></strong></p>
-<p>然后执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cnpm install hexo-cli</span><br></pre></td></tr></table></figure>
-
-<p> 就完成了hexo的安装，简单吧。</p>
-<h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><p>创建一个空文件夹并进入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir YourBlogDir &amp;&amp; <span class="built_in">cd</span> YourBlogDir</span><br></pre></td></tr></table></figure>
-
-<p>执行安装命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init</span><br></pre></td></tr></table></figure>
-
-<p>此时hexo会从github上下载文件<em>鉴于github在中国大陆的访问速度，您应该适当采取一些措施</em>到当前目录<del>这便捷的安装真是比WordPress高到不知道哪里去</del></p>
-<p>现在，你可以用hexo g &amp;&amp; hexo s然后访问<a href="127.0.0.1:4000" target="_blank" rel="noopener">localhost:4000</a>来查看预览了<br>Tips:<em>如果你发现报错，可以查看<a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">这个</a>来解决</em></p>
-<blockquote>
-<p>更新内容：<code>$ hexo s</code>命令已经不是默认安装了使用<code>$ npm install hexo-server --save</code>来启用此功能</p>
-</blockquote>
-<h1 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h1><blockquote>
-<p> Material主题已经停止开发，具体主题使用方法请自己查阅，本段内容可能已经过时。  </p>
-</blockquote>
-<p>默认的landscape主题很好看，但是没有人会用默认的对吧，hexo当然支持主题啦，你可以在<a href="https://hexo.io/themes/" target="_blank" rel="noopener">这里</a>找到更多。我选择的是<a href="https://material.viosey.com/" target="_blank" rel="noopener">Material</a>一款扁平化的主题。当然你有能力可以自己开发。<br> 依照说明，在博客目录下执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo install hexo-material</span><br><span class="line">$ cp /node-modules/hexo-material /theme/material</span><br><span class="line">$ cp /theme/material/_config.template.yml  /theme/material/_config.yml</span><br></pre></td></tr></table></figure>
-
-<p>完成主题的安装，之后在<code>_config.yml</code>文件中启用修改<code>theme: 
-landscape</code>为<code>theme: material</code>即可<br>Tips:<em>一定要在<code>theme:</code>的冒号后加一个空格，不然会报错，其他yml配置亦是如此</em><br>现在，你可以用<code>hexo s</code>来查看效果了。</p>
-<h1 id="部署到Github-Pages"><a href="#部署到Github-Pages" class="headerlink" title="部署到Github Pages"></a>部署到Github Pages</h1><h2 id="创建Github-仓库"><a href="#创建Github-仓库" class="headerlink" title="创建Github 仓库"></a>创建Github 仓库</h2><p>直接新建一个名为<code>{你的用户名}.github.io</code>的仓库</p>
-<h2 id="修改-config-yml"><a href="#修改-config-yml" class="headerlink" title="修改_config.yml"></a>修改_config.yml</h2><p>使用你喜欢的编辑器打开_config.yml将其中的</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url:</span></span><br></pre></td></tr></table></figure>
-
-<p>改为</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">url:</span> <span class="string">你的pages地址</span></span><br></pre></td></tr></table></figure>
-
-<p>将</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">	<span class="attr">type:</span></span><br></pre></td></tr></table></figure>
-
-<p>改为</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"> 		<span class="attr">type:</span> <span class="string">git</span></span><br><span class="line"> 		<span class="attr">repository:</span> <span class="string">git仓库地址</span> </span><br><span class="line"> 	<span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
-
-<p><em>推荐使用ssh方式，当然https也可以</em><br>对了别忘了执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cnpm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-
-<p>否则会报错</p>
-<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>最赛艇的一步来啦！<br>hexo的部署非常简单，就一条命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d -g <span class="comment">#必须在博客目录执行不然会报错</span></span><br></pre></td></tr></table></figure>
-
-<p><em>若使用https认证会让您输入用户名和密码</em></p>
-<h1 id="发布文章"><a href="#发布文章" class="headerlink" title="发布文章"></a>发布文章</h1><p>使用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo n <span class="string">"文章标题"</span> <span class="comment">#在blog目录下执行</span></span><br></pre></td></tr></table></figure>
-
-<p>来新建文章，使用<code>markdown</code>编辑器打开<code>source/_posts/文章标题.md</code>即可开始写作。</p>
-<p>使用<code>hexo g &amp;&amp; hexo s</code>在本地预览<em>这个命令会自动检测文件变动，也就是说，你修改一下，刷新浏览器，就会渲染一次，挺方便的</em></p>
-<p>使用<code>hexo d -g</code>发布到Github Pages，由于网络原因，您可能需要过几分钟才能看到变化。</p>
-<h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><p>由于Github网络技术落后，无法正常链接到中国互联网，请访问<code>https://你的Github用户名.github.io</code>来查看效果  <del>不上HSTS不就是技术落后吗</del></p>
-<p>如果您有自己的私有域名，添加<code>CNAME</code>记录指向你的Blog地址即可，当然您也可以使用智能DNS来进行分流操作。</p>
-<p>对于<code>markdown</code>写作软件安利一波<code>Typora</code>，非常舒适</p>
-<p><strong>Yah！恭喜你的博客已经上线了</strong></p>
-<p>最后祝您身体健康，再见！(手动滑稽)</p>
-
+      
+      
+        <div class="readmore">
+          <a href="/2017/07/08/build-blog/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
       
     </div>
     
       <div class="full-width auto-padding tags">
         
-          <a href="/tags/Hexo/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Hexo</a>
+          <a href="/tags/Hexo/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> Hexo</a>
         
-          <a href="/tags/Blog/" rel="nofollow"><i class="fas fa-hashtag fa-fw"></i>Blog</a>
+          <a href="/tags/Blog/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> Blog</a>
         
       </div>
     
@@ -403,26 +343,18 @@ landscape</code>为<code>theme: material</code>即可<br>Tips:<em>一定要在<c
     
     
       
-        
-          
-          
-            
-
-          
-        
       
         
           
           
+        
+          
+          
+        
+          
+          
             
-
-          
-        
-      
-        
-          
-          
-            <section class="widget author">
+              <section class="widget author">
   <div class="content material">
     
       <div class="avatar">
@@ -459,13 +391,71 @@ landscape</code>为<code>theme: material</code>即可<br>Tips:<em>一定要在<c
   </div>
 </section>
 
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
           
         
       
         
           
           
-            <section class="widget grid">
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class="widget grid">
   
 <header class="material">
   <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
@@ -507,21 +497,84 @@ landscape</code>为<code>theme: material</code>即可<br>Tips:<em>一定要在<c
   </div>
 </section>
 
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
           
         
       
         
           
           
+        
+          
+          
             
+              
 
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
           
         
       
         
           
           
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
             
+              
   <section class="widget tagcloud">
     
 <header class="material">
@@ -538,64 +591,16 @@ landscape</code>为<code>theme: material</code>即可<br>Tips:<em>一定要在<c
   </section>
 
 
-          
-        
-      
-        
-          
-          
             
-
           
         
-      
-        
           
           
-            <section class="widget plain">
-  
-<header class="material">
-  <div><i class="fas fa-map-marker fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;访客记录</div>
-  
-</header>
-
-  <div class="content material">
-    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=53ppquqap01&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=49" async="async"></script>
-  </div>
-</section>
-
-          
-        
-      
         
           
           
-            
-
-
-  <section class="widget music">
-    
-<header class="material">
-  <div><i class="fas fa-compact-disc fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;最近在听</div>
-  
-    <a class="rightBtn" rel="external nofollow noopener noreferrer" target="_blank" href="https://music.163.com/#/my/m/music/playlist?id=2831456302" title="https://music.163.com/#/my/m/music/playlist?id=2831456302">
-    <i class="far fa-heart fa-fw"></i></a>
-  
-</header>
-
-    <div class="content material">
-      
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
-  <div class="aplayer" data-theme="#1BCDFC" data-mode="circulation" data-server="netease" data-type="playlist" data-id="2831456302" data-volume="0.4">
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
-
-
-    </div>
-  </section>
-
-
+        
+          
           
         
       
@@ -703,14 +708,14 @@ landscape</code>为<code>theme: material</code>即可<br>Tips:<em>一定要在<c
       $(function(){
         if ('.cover') {
           $('.cover').backstretch(
-          ["https://api.neweb.top/bing.php?type=rand", "https://api.neweb.top/bing.php?type=rand"],
+          ["https://api.neweb.top/bing.php?type=rand"],
           {
             duration: "6000",
             fade: "2500"
           });
         } else {
           $.backstretch(
-          ["https://api.neweb.top/bing.php?type=rand", "https://api.neweb.top/bing.php?type=rand"],
+          ["https://api.neweb.top/bing.php?type=rand"],
           {
             duration: "6000",
             fade: "2500"
@@ -730,10 +735,10 @@ landscape</code>为<code>theme: material</code>即可<br>Tips:<em>一定要在<c
 
 
 
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/app.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9/js/app.js"></script>
 
 
-  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.5/js/search.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9/js/search.js"></script>
 
 
 
