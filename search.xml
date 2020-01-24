@@ -4,6 +4,48 @@
   
     
     <entry>
+      <title>新年快乐</title>
+      <link href="/2020/01/24/happy-new-year/"/>
+      <url>/2020/01/24/happy-new-year/</url>
+      
+        <content type="html"><![CDATA[<p>伴随着爆竹声，似乎又过了一年？</p><p>太快了吧。虽然疫情冲淡了年味，但时间却不会减慢。又过去一年了啊。</p><p>看看过去的一年，感觉经历了好多，毕竟人生不就是起起落落落落落落吗？经历过欢声笑语，也经历过一段颓废的时刻，也有为自己的失败而垂头丧气，但是我也应该为自己的进步而欣喜。</p><p>算了，今天也是该立flag的时候</p><p>那么，来说下我今年的打算吧</p><ol><li>整好学业</li><li>学习机器学习（虽然自己从来没有试过，但人不就应该不断尝试吗？）</li><li>学习<code>Python</code>（2333多年老坑了）</li></ol><p>加油！奥利给！</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 随便写写 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>使用wiringPi驱动LCD1602</title>
+      <link href="/2019/11/22/pi-with-lcd1602/"/>
+      <url>/2019/11/22/pi-with-lcd1602/</url>
+      
+        <content type="html"><![CDATA[<p>这是退役之后写的第一篇文章，虽然现在文化课约等于爆零，但还是依旧胡乱玩玩（颓心似箭），想起一年多没碰的树莓派随便整整了。</p><h1 id="硬件"><a href="#硬件" class="headerlink" title="硬件"></a>硬件</h1><ul><li>Raspberry Pi 2B</li><li>LCD1602</li><li>3296电位器（指滑动变阻器）（貌似用一个合适的定值电阻也可以，但是不好调节）</li><li>导线若干（指订书钉）和mian包板</li></ul><h1 id="连接电路（怎么跟物理实验一样）"><a href="#连接电路（怎么跟物理实验一样）" class="headerlink" title="连接电路（怎么跟物理实验一样）"></a>连接电路<del>（怎么跟物理实验一样）</del></h1><p>为了节省GPIO这里使用四线模式<del>其实是导线不够了，没得用了，其实想节省GPIO的话应该直接使用I^2^C的LCD（并没有钱买</del>加上加上使能和指令正好六个GPIO</p><p>至于端口随便连就行（反正在程序里面能改）</p><h1 id="驱动程序"><a href="#驱动程序" class="headerlink" title="驱动程序"></a>驱动程序</h1><p>在经过阅读大量数据手册和实践</p><p>（本项目暂时咕咕，因为接线不慎，好像干翻IO口，虽然cpu没坏，但是现在只出乱码？bug还没找到2333）</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Raspberry Pi </tag>
+            
+            <tag> 硬件 </tag>
+            
+            <tag> 乱搞 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>蒟蒻退役记 &amp; CSP2019游记</title>
       <link href="/2019/11/17/afo/"/>
       <url>/2019/11/17/afo/</url>
