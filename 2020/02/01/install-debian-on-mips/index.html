@@ -316,7 +316,7 @@
 <p>这里说个大坑，在安装之前检查一下目标机器的架构，比如之前因为不知道选择了<code>mips</code>架构，这个架构的所有软件包以<code>MSB</code>(最高有效位)编译，但实际上我需要<code>LSB</code>(最低有效位)模式编译的，应为<code>mipsel</code></p>
 <h1 id="进入系统"><a href="#进入系统" class="headerlink" title="进入系统"></a>进入系统</h1><p>安装完成之后，将目录复制到U盘上，插到路由器上</p>
 <p>执行</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> for i in /dev /dev/pts /proc /sys; do mount --bind $i /path/to/dir$i; done</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> for i in /tmp /dev /dev/pts /proc /sys; do mount --bind $i /path/to/dir$i; done</span><br></pre></td></tr></table></figure>
 
 <p>来挂载设备树和系统进程</p>
 <p>然后使用</p>
@@ -334,7 +334,7 @@
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-02T00:43:17+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-02T00:52:26+08:00">
   <a class="notlink">
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2020年2月2日</p>
