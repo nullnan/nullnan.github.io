@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>在小米mini路由器上chroot安装debian</title>
+      <link href="/2020/02/01/install-debian-on-mips/"/>
+      <url>/2020/02/01/install-debian-on-mips/</url>
+      
+        <content type="html"><![CDATA[<p>因为不想成天开着树莓派做NAS,所以想改造一下桌面上的路由器,但是路由用的ParadoxBox很久了,一些东西也不如主流Linux发行版方便,众所周知debian是对各个体系支持都不错的发行版,那就chroot装个debian吧</p><h1 id="硬件环境"><a href="#硬件环境" class="headerlink" title="硬件环境"></a>硬件环境</h1><ul><li>小米路由器mini</li><li>一个外置存储器(最好格式化成ext4)</li></ul><h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><p>想想路由器的性能,估计我这电脑开qemu都能超过，所以还是用交叉安装吧。这里是<a href="https://wiki.debian.org/EmDebian/CrossDebootstrap#Generating_cross_images_as_root_user" target="_blank" rel="noopener">参考链接</a></p><blockquote><p>引导Debian系统基本上包括四个步骤（为简单起见，省略了一些步骤）：</p><ol><li>从存储库下载必要的.deb软件包。</li><li>将它们解压缩到目标目录。</li><li>Chroot进入目标目录。</li><li>运行每个软件包中的安装和配置脚本，完成设置。</li></ol></blockquote><p>首先我们在电脑上操作，貌似<code>debootstrap</code>这玩意应该只在Debian系下面有打包，当然这就是个shell脚本，所以去软件源里面下载下来也行。为了方便起见我们在x86电脑上执行3 4两步，所以需要qemu来运行mips体系上的软件。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo apt install qemu debootstrap</span><br></pre></td></tr></table></figure><h1 id="安装基本系统"><a href="#安装基本系统" class="headerlink" title="安装基本系统"></a>安装基本系统</h1><p>执行</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo qemu-debootstrap --arch mipsel buster /path/to/dir https://mirrors.ustc.edu.cn/debian</span><br></pre></td></tr></table></figure><p>这里说个大坑，在安装之前检查一下目标机器的架构，比如之前因为不知道选择了<code>mips</code>架构，这个架构的所有软件包以<code>MSB</code>(最高有效位)编译，但实际上我需要<code>LSB</code>(最低有效位)模式编译的，应为<code>mipsel</code></p><h1 id="进入系统"><a href="#进入系统" class="headerlink" title="进入系统"></a>进入系统</h1><p>安装完成之后，将目录复制到U盘上，插到路由器上</p><p>执行</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> for i in /dev /dev/pts /proc /sys; do mount --bind $i /path/to/dir$i; done</span><br></pre></td></tr></table></figure><p>来挂载设备树和系统进程</p><p>然后使用</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> chroot /path/to/dir /bin/bash</span><br></pre></td></tr></table></figure><p>就可以进入新的系统了</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> OS </tag>
+            
+            <tag> 硬件 </tag>
+            
+            <tag> 乱搞 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>新年快乐</title>
       <link href="/2020/01/24/happy-new-year/"/>
       <url>/2020/01/24/happy-new-year/</url>
@@ -33,11 +56,11 @@
       
         <tags>
             
-            <tag> Raspberry Pi </tag>
-            
             <tag> 硬件 </tag>
             
             <tag> 乱搞 </tag>
+            
+            <tag> Raspberry Pi </tag>
             
         </tags>
       
@@ -96,9 +119,9 @@
             
             <tag> OI </tag>
             
-            <tag> 算法 </tag>
-            
             <tag> 数据结构 </tag>
+            
+            <tag> 算法 </tag>
             
             <tag> 树链剖分 </tag>
             
@@ -121,11 +144,11 @@
             
             <tag> OI </tag>
             
+            <tag> 算法 </tag>
+            
             <tag> hash </tag>
             
             <tag> 字符串 </tag>
-            
-            <tag> 算法 </tag>
             
         </tags>
       
