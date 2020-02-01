@@ -292,7 +292,7 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <p>因为不想成天开着树莓派做NAS,所以想改造一下桌面上的路由器,但是路由用的ParadoxBox很久了,一些东西也不如主流Linux发行版方便,众所周知debian是对各个体系支持都不错的发行版,那就chroot装个debian吧</p>
+        <p>因为不想成天开着树莓派做NAS,所以想改造一下桌面上的路由器,但是路由用的ParadoxBox很旧了,一些东西也不如主流Linux发行版方便,众所周知debian是对各个体系支持都不错的发行版,那就chroot装个debian吧</p>
 <h1 id="硬件环境"><a href="#硬件环境" class="headerlink" title="硬件环境"></a>硬件环境</h1><ul>
 <li>小米路由器mini</li>
 <li>一个外置存储器(最好格式化成ext4)</li>
@@ -308,7 +308,7 @@
 </ol>
 </blockquote>
 <p>首先我们在电脑上操作，貌似<code>debootstrap</code>这玩意应该只在Debian系下面有打包，当然这就是个shell脚本，所以去软件源里面下载下来也行。为了方便起见我们在x86电脑上执行3 4两步，所以需要qemu来运行mips体系上的软件。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo apt install qemu debootstrap</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo apt install binfmt-support qemu qemu-user-static debootstrap</span><br></pre></td></tr></table></figure>
 
 <h1 id="安装基本系统"><a href="#安装基本系统" class="headerlink" title="安装基本系统"></a>安装基本系统</h1><p>执行</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo qemu-debootstrap --arch mipsel buster /path/to/dir https://mirrors.ustc.edu.cn/debian</span><br></pre></td></tr></table></figure>
@@ -334,7 +334,7 @@
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-02T00:52:26+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-02-02T00:54:10+08:00">
   <a class="notlink">
     <i class="fas fa-clock" aria-hidden="true"></i>
     <p>更新于 2020年2月2日</p>
