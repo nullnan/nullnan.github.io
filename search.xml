@@ -4,11 +4,32 @@
   
     
     <entry>
+      <title>学习Flask Day1</title>
+      <link href="/2020/02/02/learn-flask/"/>
+      <url>/2020/02/02/learn-flask/</url>
+      
+        <content type="html"><![CDATA[<h1 id="创建python虚拟环境"><a href="#创建python虚拟环境" class="headerlink" title="创建python虚拟环境"></a>创建python虚拟环境</h1><p>首先安装virtualvenv</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> apt install python3-venv</span><br><span class="line"><span class="meta">$</span> python3 -m venv envname</span><br></pre></td></tr></table></figure><p>以后就可以使用<code>.envname/bin/active</code>进入Python虚拟环境，应该可以看到，当前shell的提示符已经发生了变化。<br>安装之后，需要安装Flask</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> pip install flask python-dotenv pylint # pylint是因为vscode的Python扩展需要使用</span><br></pre></td></tr></table></figure><p>之后配置开发模式，在这个模式下，对文件做出的修改会立刻生效</p><p>创建<code>.env</code>和<code>.flaskenv</code>并将<code>.env</code>加入到<code>.gitignore</code>中</p><p>在<code>.flaskenv</code>中加入</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FLASK_ENV=development</span><br></pre></td></tr></table></figure><h1 id="启动环境"><a href="#启动环境" class="headerlink" title="启动环境"></a>启动环境</h1><p>编写<code>app.py</code>，注意这里的名字可以通过<code>FLASK_APP</code>来进行设置</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Hello,world'</span></span><br></pre></td></tr></table></figure><p>然后用<code>flask run</code>就可在<code>localhost:5000</code>上看到你创建的应用了</p><h2 id="视图函数"><a href="#视图函数" class="headerlink" title="视图函数"></a>视图函数</h2><p>在Flask中，视图函数是用类似<code>@app.route()</code>这样的wapper修饰的函数。Web App是一系列视图函数的集合，各种函数处理不同的URL请求，组成了完整的Web App</p><h3 id="URL传值"><a href="#URL传值" class="headerlink" title="URL传值"></a>URL传值</h3><p>在Flask中使用<code>@app.route(&#39;/\&lt; value\&gt;&#39;)</code>来接收相应的值</p><h1 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h1><p>在Python代码中写HTML很显然是不合适的，为了生成适当的HTML代码，需要使用模板引擎，Flask使用<code>jinja2</code>来生成HTML代码，以下是基本语法。<br><em>因为hexo的原因，以后就补贴模板代码了</em></p><ul><li>用来标记变量。</li><li>用来标记语句，比如 if 语句，for 语句等。</li><li>用来写注释。</li></ul><p>为了方便对变量进行处理，Jinja2 提供了一些过滤器，语法形式如下：</p><ul><li>变量|过滤器 </li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+            <tag> Flask </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>在小米mini路由器上chroot安装debian</title>
       <link href="/2020/02/01/install-debian-on-mips/"/>
       <url>/2020/02/01/install-debian-on-mips/</url>
       
-        <content type="html"><![CDATA[<p>因为不想成天开着树莓派做NAS,所以想改造一下桌面上的路由器,但是路由用的ParadoxBox很旧了,一些东西也不如主流Linux发行版方便,众所周知debian是对各个体系支持都不错的发行版,那就chroot装个debian吧</p><h1 id="硬件环境"><a href="#硬件环境" class="headerlink" title="硬件环境"></a>硬件环境</h1><ul><li>小米路由器mini</li><li>一个外置存储器(最好格式化成ext4)</li></ul><h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><p>想想路由器的性能,估计我这电脑开qemu都能超过，所以还是用交叉安装吧。这里是<a href="https://wiki.debian.org/EmDebian/CrossDebootstrap#Generating_cross_images_as_root_user" target="_blank" rel="noopener">参考链接</a></p><blockquote><p>引导Debian系统基本上包括四个步骤（为简单起见，省略了一些步骤）：</p><ol><li>从存储库下载必要的.deb软件包。</li><li>将它们解压缩到目标目录。</li><li>Chroot进入目标目录。</li><li>运行每个软件包中的安装和配置脚本，完成设置。</li></ol></blockquote><p>首先我们在电脑上操作，貌似<code>debootstrap</code>这玩意应该只在Debian系下面有打包，当然这就是个shell脚本，所以去软件源里面下载下来也行。为了方便起见我们在x86电脑上执行3 4两步，所以需要qemu来运行mips体系上的软件。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo apt install binfmt-support qemu qemu-user-static debootstrap</span><br></pre></td></tr></table></figure><h1 id="安装基本系统"><a href="#安装基本系统" class="headerlink" title="安装基本系统"></a>安装基本系统</h1><p>执行</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sudo qemu-debootstrap --arch mipsel buster /path/to/dir https://mirrors.ustc.edu.cn/debian</span><br></pre></td></tr></table></figure><p>这里说个大坑，在安装之前检查一下目标机器的架构，比如之前因为不知道选择了<code>mips</code>架构，这个架构的所有软件包以<code>MSB</code>(最高有效位)编译，但实际上我需要<code>LSB</code>(最低有效位)模式编译的，应为<code>mipsel</code></p><h1 id="进入系统"><a href="#进入系统" class="headerlink" title="进入系统"></a>进入系统</h1><p>安装完成之后，将目录复制到U盘上，插到路由器上</p><p>执行</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> for i in /tmp /dev /dev/pts /proc /sys; do mount --bind $i /path/to/dir$i; done</span><br></pre></td></tr></table></figure><p>来挂载设备树和系统进程</p><p>然后使用</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> chroot /path/to/dir /bin/bash</span><br></pre></td></tr></table></figure><p>就可以进入新的系统了</p>]]></content>
+        <content type="html"><![CDATA[<p>因为不想成天开着树莓派做NAS,所以想改造一下桌面上的路由器,但是路由用的ParadoxBox很旧了,一些东西也不如主流Linux发行版方便,众所周知debian是对各个体系支持都不错的发行版,那就chroot装个debian吧</p><h1 id="硬件环境"><a href="#硬件环境" class="headerlink" title="硬件环境"></a>硬件环境</h1><ul><li>小米路由器mini</li><li>一个外置存储器(最好格式化成ext4)</li></ul><h1 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h1><p>想想路由器的性能,估计我这电脑开qemu都能超过，所以还是用交叉安装吧。这里是<a href="https://wiki.debian.org/EmDebian/CrossDebootstrap#Generating_cross_images_as_root_user" target="_blank" rel="noopener">参考链接</a></p><blockquote><p>引导Debian系统基本上包括四个步骤（为简单起见，省略了一些步骤）：</p><ol><li>从存储库下载必要的.deb软件包。</li><li>将它们解压缩到目标目录。</li><li>Chroot进入目标目录。</li><li>运行每个软件包中的安装和配置脚本，完成设置。</li></ol></blockquote><p>首先我们在电脑上操作，貌似<code>debootstrap</code>这玩意应该只在Debian系下面有打包，当然这就是个shell脚本，所以去软件源里面下载下来也行。为了方便起见我们在x86电脑上执行3 4两步，所以需要qemu来运行mips体系上的软件。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo apt install binfmt-support qemu qemu-user-static debootstrap</span></span><br></pre></td></tr></table></figure><h1 id="安装基本系统"><a href="#安装基本系统" class="headerlink" title="安装基本系统"></a>安装基本系统</h1><p>执行</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo qemu-debootstrap --arch mipsel buster /path/to/dir https://mirrors.ustc.edu.cn/debian</span></span><br></pre></td></tr></table></figure><p>这里说个大坑，在安装之前检查一下目标机器的架构，比如之前因为不知道选择了<code>mips</code>架构，这个架构的所有软件包以<code>MSB</code>(最高有效位)编译，但实际上我需要<code>LSB</code>(最低有效位)模式编译的，应为<code>mipsel</code></p><h1 id="进入系统"><a href="#进入系统" class="headerlink" title="进入系统"></a>进入系统</h1><p>安装完成之后，将目录复制到U盘上，插到路由器上</p><p>执行</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="keyword">for</span> i <span class="keyword">in</span> /tmp /dev /dev/pts /proc /sys; <span class="keyword">do</span> mount --<span class="built_in">bind</span> <span class="variable">$i</span> /path/to/dir<span class="variable">$i</span>; <span class="keyword">done</span></span></span><br></pre></td></tr></table></figure><p>来挂载设备树和系统进程</p><p>然后使用</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> chroot /path/to/dir /bin/bash</span></span><br></pre></td></tr></table></figure><p>就可以进入新的系统了</p>]]></content>
       
       
       
@@ -119,9 +140,9 @@
             
             <tag> OI </tag>
             
-            <tag> 数据结构 </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> 数据结构 </tag>
             
             <tag> 树链剖分 </tag>
             
@@ -144,11 +165,11 @@
             
             <tag> OI </tag>
             
-            <tag> 算法 </tag>
-            
             <tag> hash </tag>
             
             <tag> 字符串 </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
