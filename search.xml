@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>编译Emacs native comp</title>
+      <link href="/2020/10/31/compile-emacs-native-comp/"/>
+      <url>/2020/10/31/compile-emacs-native-comp/</url>
+      
+        <content type="html"><![CDATA[<h1 id="预备工作"><a href="#预备工作" class="headerlink" title="预备工作"></a>预备工作</h1><h3 id="获取源代码"><a href="#获取源代码" class="headerlink" title="获取源代码"></a>获取源代码</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://gitee.com/mirrors/emacs.git -b feature/native-comp</span><br></pre></td></tr></table></figure><p>这里使用了gitee提供的镜像。</p><h3 id="安装依赖"><a href="#安装依赖" class="headerlink" title="安装依赖"></a>安装依赖</h3><p>这将安装常见依赖</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt build-dep emacs</span><br><span class="line">sudo apt install libjansson-dev libwebkit2gtk-4.0-dev libgccjit-8-dev</span><br></pre></td></tr></table></figure><h2 id="开始编译"><a href="#开始编译" class="headerlink" title="开始编译"></a>开始编译</h2><h3 id="检查环境"><a href="#检查环境" class="headerlink" title="检查环境"></a>检查环境</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./autogen.sh</span><br></pre></td></tr></table></figure><p>查看输出使用apt安装所需工具</p><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">./configure --with-nativecomp \</span><br><span class="line">--with-json \</span><br><span class="line">--with-xwidgets \</span><br><span class="line">--without-gconf \</span><br><span class="line">--without-gsettings</span><br></pre></td></tr></table></figure><h3 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">time make NATIVE_FULL_AOT=1 -j12</span><br></pre></td></tr></table></figure><p>注意NATIVE_FULL_AOT会编译全部elisp文件，用替换为<code>NATIVE_FAST_BOOT=1</code>来加速构建。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make NATIVE_FULL_AOT=1 -j12  7737.81s user 162.47s system 900% cpu 14:36.90 total</span><br></pre></td></tr></table></figure><p>以上是time的输出，可以看到全编译一边还是很耗时的。。。CPU最高到了70度。。。</p><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo make install prefix=/usr/<span class="built_in">local</span>/stow/emacs</span><br></pre></td></tr></table></figure><p><em>注意：为了使用<code>stow</code>管理emacs包，我设置了prefix</em></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/stow</span><br><span class="line">stow emacs</span><br></pre></td></tr></table></figure><p>至此emacs native comp就安装好了</p><h3 id="体验"><a href="#体验" class="headerlink" title="体验"></a>体验</h3><p>首先加载速度是真的快了，体验了下LSP感觉快了一点，更多的以后在体验。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Emacs </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>在Debian下完全卸载Emacs</title>
       <link href="/2020/10/31/remove-emacs-on-debian/"/>
       <url>/2020/10/31/remove-emacs-on-debian/</url>
@@ -14,9 +33,9 @@
       
         <tags>
             
-            <tag> OS </tag>
-            
             <tag> Emacs </tag>
+            
+            <tag> OS </tag>
             
         </tags>
       
@@ -119,11 +138,11 @@
       
         <tags>
             
-            <tag> Raspberry Pi </tag>
-            
             <tag> 硬件 </tag>
             
             <tag> 乱搞 </tag>
+            
+            <tag> Raspberry Pi </tag>
             
         </tags>
       
