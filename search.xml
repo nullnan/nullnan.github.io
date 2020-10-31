@@ -4,11 +4,53 @@
   
     
     <entry>
+      <title>在Debian下完全卸载Emacs</title>
+      <link href="/2020/10/31/remove-emacs-on-debian/"/>
+      <url>/2020/10/31/remove-emacs-on-debian/</url>
+      
+        <content type="html"><![CDATA[<p>今天想卸载apt上安装的Emacs，好自己编译一下<code>native comp</code>，所以就</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt autoremove emacs</span><br></pre></td></tr></table></figure><p>然而，敲<code>emacs</code>还是可以打开？？？</p><p>合着根本没删。。。</p><p>去<a href="https://emacs.stackexchange.com/questions/21508/cant-uninstall-emacs-on-debian" target="_blank" rel="noopener">Stackoverflow</a>搜了一下，发现Emacs在Debian上面是一个<code>metapackage</code>，光删了根本没有用<del>形 式 主 义</del>。</p><p>给出的解决方案是：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt purge emacs*</span><br></pre></td></tr></table></figure><p>然而</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">E: 错误，pkgProblemResolver::Resolve 发生故障，这可能是有软件包被要求保持现状的缘故。</span><br></pre></td></tr></table></figure><p>所以这个打包者真是深得百度360真传，装上了就卸不掉<del>强 行 传 教</del></p><p>没办法了，还是得自己解决</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ apt info emacs</span><br></pre></td></tr></table></figure><p>注意看下这行</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Depends: emacs-gtk (&gt;= 1:26.1) | emacs-lucid (&gt;= 1:26.1) | emacs-nox (&gt;= 1:26.1)</span><br></pre></td></tr></table></figure><p>所以我们只要把这些卸载了就行</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt remove emacs-gtk emacs-lucid emacs-nox</span><br></pre></td></tr></table></figure><p><em>注意：一定要把所有的依赖（即使没有安装）全写上，不然apt就会很”贴心”的给你新装上另一个依赖</em></p><p>最后我们在执行<code>emacs</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">command not found: emacs</span><br></pre></td></tr></table></figure><p>终于卸载掉了~~</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> OS </tag>
+            
+            <tag> Emacs </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>在KVM上使用MacOS</title>
+      <link href="/2020/05/11/osx-on-kvm/"/>
+      <url>/2020/05/11/osx-on-kvm/</url>
+      
+        <content type="html"><![CDATA[<p>　　MacOS安装在KVM上是怎么回事呢？MacOS相信大家都很熟悉，但是MacOS安装在KVM上是怎么回事呢，下面就让小编带大家一起了解吧。<br>　　MacOS安装在KVM上，其实就是在虚拟机上装MacOS，大家可能会很惊讶MacOS怎么会安装在KVM上呢？但事实就是这样，小编也感到非常惊讶。<br>　　这就是关于MacOS安装在KVM上的事情了，大家有什么想法呢，欢迎在评论区告诉小编一起讨论哦！</p><hr><ul><li><p>CPU :  Ryzen 2600</p></li><li><p>主板 ：微星 B350M 迫击炮</p></li><li><p>显卡 ：GTX 1065</p><p>主要是采取物理安装的办法非常麻烦，而且我甚至没法进到安装界面，所以用KVM也差不多，毕竟我也不会干些对性能要去高的操作。</p></li></ul><h1 id="宿主系统准备"><a href="#宿主系统准备" class="headerlink" title="宿主系统准备"></a>宿主系统准备</h1><p><em>所有操作均在Debian10下进行</em></p><p>首先clone一下github上的project</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://github.com/kholia/OSX-KVM.git</span><br></pre></td></tr></table></figure><p>这个是我所看的参考教程</p><h2 id="启用KVM支持和安装qemu"><a href="#启用KVM支持和安装qemu" class="headerlink" title="启用KVM支持和安装qemu"></a>启用KVM支持和安装qemu</h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> OS </tag>
+            
+            <tag> hackintosh </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>学习Flask Day1</title>
       <link href="/2020/02/02/learn-flask/"/>
       <url>/2020/02/02/learn-flask/</url>
       
-        <content type="html"><![CDATA[<h1 id="创建python虚拟环境"><a href="#创建python虚拟环境" class="headerlink" title="创建python虚拟环境"></a>创建python虚拟环境</h1><p>首先安装virtualvenv</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> apt install python3-venv</span><br><span class="line"><span class="meta">$</span> python3 -m venv envname</span><br></pre></td></tr></table></figure><p>以后就可以使用<code>.envname/bin/active</code>进入Python虚拟环境，应该可以看到，当前shell的提示符已经发生了变化。<br>安装之后，需要安装Flask</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> pip install flask python-dotenv pylint # pylint是因为vscode的Python扩展需要使用</span><br></pre></td></tr></table></figure><p>之后配置开发模式，在这个模式下，对文件做出的修改会立刻生效</p><p>创建<code>.env</code>和<code>.flaskenv</code>并将<code>.env</code>加入到<code>.gitignore</code>中</p><p>在<code>.flaskenv</code>中加入</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FLASK_ENV=development</span><br></pre></td></tr></table></figure><h1 id="启动环境"><a href="#启动环境" class="headerlink" title="启动环境"></a>启动环境</h1><p>编写<code>app.py</code>，注意这里的名字可以通过<code>FLASK_APP</code>来进行设置</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Hello,world'</span></span><br></pre></td></tr></table></figure><p>然后用<code>flask run</code>就可在<code>localhost:5000</code>上看到你创建的应用了</p><h2 id="视图函数"><a href="#视图函数" class="headerlink" title="视图函数"></a>视图函数</h2><p>在Flask中，视图函数是用类似<code>@app.route()</code>这样的wapper修饰的函数。Web App是一系列视图函数的集合，各种函数处理不同的URL请求，组成了完整的Web App</p><h3 id="URL传值"><a href="#URL传值" class="headerlink" title="URL传值"></a>URL传值</h3><p>在Flask中使用<code>@app.route(&#39;/\&lt; value\&gt;&#39;)</code>来接收相应的值</p><h1 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h1><p>在Python代码中写HTML很显然是不合适的，为了生成适当的HTML代码，需要使用模板引擎，Flask使用<code>jinja2</code>来生成HTML代码，以下是基本语法。<br><em>因为hexo的原因，以后就补贴模板代码了</em></p><ul><li>用来标记变量。</li><li>用来标记语句，比如 if 语句，for 语句等。</li><li>用来写注释。</li></ul><p>为了方便对变量进行处理，Jinja2 提供了一些过滤器，语法形式如下：</p><ul><li>变量|过滤器 </li></ul>]]></content>
+        <content type="html"><![CDATA[<h1 id="创建python虚拟环境"><a href="#创建python虚拟环境" class="headerlink" title="创建python虚拟环境"></a>创建python虚拟环境</h1><p>首先安装virtualvenv</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> apt install python3-venv</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> python3 -m venv envname</span></span><br></pre></td></tr></table></figure><p>以后就可以使用<code>.envname/bin/active</code>进入Python虚拟环境，应该可以看到，当前shell的提示符已经发生了变化。<br>安装之后，需要安装Flask</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> pip install flask python-dotenv pylint <span class="comment"># pylint是因为vscode的Python扩展需要使用</span></span></span><br></pre></td></tr></table></figure><p>之后配置开发模式，在这个模式下，对文件做出的修改会立刻生效</p><p>创建<code>.env</code>和<code>.flaskenv</code>并将<code>.env</code>加入到<code>.gitignore</code>中</p><p>在<code>.flaskenv</code>中加入</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FLASK_ENV=development</span><br></pre></td></tr></table></figure><h1 id="启动环境"><a href="#启动环境" class="headerlink" title="启动环境"></a>启动环境</h1><p>编写<code>app.py</code>，注意这里的名字可以通过<code>FLASK_APP</code>来进行设置</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Hello,world'</span></span><br></pre></td></tr></table></figure><p>然后用<code>flask run</code>就可在<code>localhost:5000</code>上看到你创建的应用了</p><h2 id="视图函数"><a href="#视图函数" class="headerlink" title="视图函数"></a>视图函数</h2><p>在Flask中，视图函数是用类似<code>@app.route()</code>这样的wapper修饰的函数。Web App是一系列视图函数的集合，各种函数处理不同的URL请求，组成了完整的Web App</p><h3 id="URL传值"><a href="#URL传值" class="headerlink" title="URL传值"></a>URL传值</h3><p>在Flask中使用<code>@app.route(&#39;/\&lt; value\&gt;&#39;)</code>来接收相应的值</p><h1 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h1><p>在Python代码中写HTML很显然是不合适的，为了生成适当的HTML代码，需要使用模板引擎，Flask使用<code>jinja2</code>来生成HTML代码，以下是基本语法。<br><em>因为hexo的原因，以后就补贴模板代码了</em></p><ul><li>用来标记变量。</li><li>用来标记语句，比如 if 语句，for 语句等。</li><li>用来写注释。</li></ul><p>为了方便对变量进行处理，Jinja2 提供了一些过滤器，语法形式如下：</p><ul><li>变量|过滤器 </li></ul>]]></content>
       
       
       
@@ -77,11 +119,11 @@
       
         <tags>
             
+            <tag> Raspberry Pi </tag>
+            
             <tag> 硬件 </tag>
             
             <tag> 乱搞 </tag>
-            
-            <tag> Raspberry Pi </tag>
             
         </tags>
       
