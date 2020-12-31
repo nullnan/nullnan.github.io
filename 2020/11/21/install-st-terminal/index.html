@@ -293,9 +293,25 @@
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
         <p> 在寻找了大量终端模拟器后，st突然吸引了我的目光…</p>
-<h1 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h1><p>下载源代码</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$</span><br></pre></td></tr></table></figure>
+<p>(最主要是可以支持连字而且还没有那么多依赖,不想Konsole那样还得装一大堆其qt库)</p>
+<h1 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h1><h2 id="下载源代码"><a href="#下载源代码" class="headerlink" title="下载源代码"></a>下载源代码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> https://git.suckless.org/st --depth=1</span><br></pre></td></tr></table></figure>
 
+<p>或者可以直接下载版本zip包(还是推荐这个)</p>
+<h2 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h2><p>在解压源代码之后,我们为了方便管理用<code>git init</code>新建一个git仓库来管理配置</p>
+<p>suckless开发的软件有个显著的特点就是需要通过修改头文件和打patch来启用修改功能.</p>
+<p>同样,st的原生是不支持连字的,为了获得功能,我们必须在<a href="https://st.suckless.org/patches/" target="_blank" rel="noopener">patches</a>上面获得所需要的patch然后打上.下载diff文件后需要用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ patch &lt; the-patch-you-need.diff</span><br></pre></td></tr></table></figure>
+
+<p>之后,如果有冲突,还需要手动解决.</p>
+<p>通过足够多的patch和配置，我们就能获得我们想要的定制化终端，是不是很棒呢？</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><h2 id="stow安装"><a href="#stow安装" class="headerlink" title="stow安装"></a>stow安装</h2><p>之前在安装emacs的时候用的stow现在可以派上用场，首先修改<code>config.h</code> 中的<code>PREFIX</code>在<code>make install</code>之后切换到目录执行下stow就行，这样的好处是方便快捷删除和切换版本（虽然st本来文件就不多．．．）</p>
+<h2 id="基于包管理器安装"><a href="#基于包管理器安装" class="headerlink" title="基于包管理器安装"></a>基于包管理器安装</h2><h3 id="替换系统安装的st"><a href="#替换系统安装的st" class="headerlink" title="替换系统安装的st"></a>替换系统安装的st</h3><p>首先用<code>sudo apt install stterm</code>安装好官方版本st，之后用<code>ln -s /usr.local/bin/st /usr/bin/st</code>来替换掉官方的st．然而，可以预见的是，如果官方源更新了，那我们的替换就失效了．</p>
+<p>然而我并不会打deb包，或许我可以研究一下deb或者nixpkg来打一个包．</p>
+<h3 id="设置系统默认终端"><a href="#设置系统默认终端" class="headerlink" title="设置系统默认终端"></a>设置系统默认终端</h3><p>如果是按照上面的步骤可用用</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo update-alternatives --config x-terminal-emulator</span><br></pre></td></tr></table></figure>
+
+<p>来设置系统默认终端，这就是全部了！</p>
+<p>关于我的st配置，我把它传到的<a href="https://github.com/nullnan/st" target="_blank" rel="noopener">Github</a>上面，所有打过的patch在<code>patches</code>文件夹下面，而修改过的配置可以在commit记录中看到．</p>
 
       </div>
       
@@ -307,10 +323,10 @@
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-21T22:05:48+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-12-31T23:57:33+08:00">
   <a class="notlink">
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>更新于 2020年11月21日</p>
+    <p>更新于 2020年12月31日</p>
   </a>
 </div>
 
@@ -537,7 +553,7 @@
 </header>
 
     <div class="content material">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#编译"><span class="toc-text">编译</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#编译"><span class="toc-text">编译</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#下载源代码"><span class="toc-text">下载源代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改配置"><span class="toc-text">修改配置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#stow安装"><span class="toc-text">stow安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基于包管理器安装"><span class="toc-text">基于包管理器安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#替换系统安装的st"><span class="toc-text">替换系统安装的st</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置系统默认终端"><span class="toc-text">设置系统默认终端</span></a></li></ol></li></ol></li></ol>
     </div>
   </section>
 
